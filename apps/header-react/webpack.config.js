@@ -1,5 +1,5 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const { ModuleFederationPlugin } = require('webpack').container;
 
 const deps = require("./package.json").dependencies;
 module.exports = {
@@ -41,7 +41,7 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "header-react",
+      name: "header",
       filename: "remoteEntry.js",
       remotes: {},
       exposes: {

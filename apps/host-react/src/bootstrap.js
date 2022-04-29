@@ -1,14 +1,28 @@
-import { registerApplication, start } from 'single-spa';
-import React from 'react'
-import ReactDOM from "react-dom"
-import { App } from './App'
+import { registerApplication, start } from "single-spa";
+import React from "react";
+import ReactDOM from "react-dom";
+import { App } from "./App";
 
 registerApplication(
-  'header',
-  () => import('remote/HeaderSSPA'),
-  location => location.pathname.startsWith('/'),
+  "header",
+  () => import("header/Header"),
+  (location) => location.pathname.startsWith("/"),
   {
-    title: "Test"
+    title: "Test",
+  }
+);
+
+registerApplication(
+  "menu",
+  () => import("menu/Menu"),
+  (location) => location.pathname.startsWith("/"),
+  {
+    menu: [
+      {
+        id: "qwer",
+        label: "asdfasdf",
+      },
+    ],
   }
 );
 
