@@ -8,5 +8,11 @@ const svelteLifecycles = singleSpaSvelte({
 });
 
 export const bootstrap = svelteLifecycles.bootstrap;
-export const mount = svelteLifecycles.mount;
-export const unmount = svelteLifecycles.unmount;
+export const mount = (...args) => {
+  console.log('on mount')
+  return svelteLifecycles.mount(...args);
+}
+export const unmount = (...args) => {
+  console.log('unmount')
+  return svelteLifecycles.unmount(...args);
+}

@@ -1,21 +1,15 @@
 <script>
   import Widget from '../Widget/Widget.svelte'
-  // import isAuthenticated from '../../store/auth';
-  // let isAuth = false;
-  //
-  // isAuthenticated.subscribe((value) => (isAuth = value));
 
-  let items = [
-    {
-      id: '1',
-      label: 'test'
-    },
-    {
-      id: '2',
-      label: 'Some other menu'
-    }
-  ]
 </script>
+<style>
+  .widget-wrapper {
+      width: 250px;
+      height: 250px;
+  }
+</style>
 
 <h1>Home</h1>
-<Widget items={items} onMenuClick={id => console.log(id)}/>
+<div class="widget-wrapper">
+  <Widget onMenuClick={() => console.log('widget was clicked!')}/>
+</div>
