@@ -1,5 +1,5 @@
 import singleSpaSvelte from 'single-spa-svelte';
-import Menu from './Menu.svelte';
+import Menu from './Widget.svelte';
 
 const svelteLifecycles = singleSpaSvelte({
   component: Menu,
