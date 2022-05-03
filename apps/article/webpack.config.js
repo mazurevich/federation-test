@@ -49,7 +49,9 @@ module.exports = {
       name: "article",
       filename: "remoteEntry.js",
       remotes: {},
-      exposes: {},
+      exposes: {
+        './article': './src/Article.js'
+      },
       shared: {},
     }),
     new HtmlWebPackPlugin({
