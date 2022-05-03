@@ -1,8 +1,12 @@
 <script>
+  import Article from './components/Article/Article.vue';
+  import Footer from './components/Footer/Footer.vue';
   import Header from './components/Header/Header.vue';
 
   export default {
     components: {
+      Article,
+      Footer,
       Header,
     }
   }
@@ -11,16 +15,12 @@
 <template>
   <div class="container">
     <Header />
-    <main>
-      <div>Framework: vue3</div>
-      <div>Language: JavaScript</div>
-      <div>CSS: Empty CSS</div>
-    </main>
-    <footer>Article Footer</footer>
+    <Article />
+    <Footer />
   </div>
 </template>
 
-<style>
+<style scoped>
   .container {
     display: flex;
     flex-direction: column;

@@ -10,7 +10,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
   .metadata {
     display: flex;
     flex-direction: column;

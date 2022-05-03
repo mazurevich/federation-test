@@ -24,7 +24,7 @@
   </header>
 </template>
 
-<style>
+<style scoped>
   .header {
     display: flex;
     align-items: stretch;
