@@ -18,7 +18,7 @@
     justify-content: stretch;
 
     border-radius: 12px;
-    width: 260px;
+    width: 20%;
     height: 310px;
     background-color: white;
   }

@@ -36,6 +36,7 @@ export default {
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 20px;
   }
   .title {
     color: #455664;
