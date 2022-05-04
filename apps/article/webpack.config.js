@@ -1,21 +1,16 @@
+const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const { VueLoaderPlugin } = require("vue-loader");
 
 module.exports = {
+  mode: "development",
+  entry: "./src/index.js",
   output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js",
     publicPath: "auto",
   },
-
-  resolve: {
-    extensions: [".tsx", ".ts", ".vue", ".jsx", ".js", ".json"],
-  },
-
-  devServer: {
-    port: 3001,
-    historyApiFallback: true,
-  },
-
   module: {
     rules: [
       {
@@ -42,7 +37,9 @@ module.exports = {
       },
     ],
   },
-
+  resolve: {
+    extensions: [".tsx", ".ts", ".vue", ".jsx", ".js", ".json"],
+  },
   plugins: [
     new VueLoaderPlugin(),
     new ModuleFederationPlugin({
@@ -50,12 +47,16 @@ module.exports = {
       filename: "remoteEntry.js",
       remotes: {},
       exposes: {
-        './article': './src/Article.js'
+        './Article': './src/Article.js'
       },
       shared: {},
     }),
     new HtmlWebPackPlugin({
-      template: "./src/index.html",
+      template: path.resolve(__dirname, "public/index.html"),
     }),
   ],
+  devServer: {
+    port: 3001,
+    historyApiFallback: true,
+  },
 };
