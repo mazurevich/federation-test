@@ -6,6 +6,7 @@
   "scripts": {
     "start": "http-server ./dist/ --cors -o -c-1 --proxy",
     "build": "webpack --mode production",
+    "build:start": "cd dist && PORT=3002 npx serve",
     "dev": "webpack serve --open chrome",
     "test": "jest",
     "test:watch": "npm run test -- --watch"
