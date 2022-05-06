@@ -43,7 +43,7 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new ModuleFederationPlugin({
-      name: "article",
+      name: "vue_example",
       filename: "remoteEntry.js",
       remotes: {},
       exposes: {

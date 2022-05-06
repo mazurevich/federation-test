@@ -44,7 +44,7 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "widget",
+      name: "svelte_example",
       filename: "remoteEntry.js",
       remotes: {},
       exposes: {
