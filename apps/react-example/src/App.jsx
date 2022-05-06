@@ -5,10 +5,9 @@ import "./index.css";
 import { Blog, Home } from "./pages";
 
 export const App = ({ basePath }) => {
-  console.log(basePath);
   return (
     <div className="container">
-      <div>Hello in react example</div>
+      <div>Hello from React example</div>
       <BrowserRouter basename={basePath}>
         <Routes>
           <Route path="/" element={<Home />} />
