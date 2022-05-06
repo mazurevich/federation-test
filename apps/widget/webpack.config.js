@@ -48,7 +48,8 @@ module.exports = {
       filename: "remoteEntry.js",
       remotes: {},
       exposes: {
-        './Widget': './src/components/Widget/WidgetSSPA'
+        './Widget': './src/components/Widget/WidgetSSPA',
+        './App': './src/AppSSPA'
       },
       shared: {
       },

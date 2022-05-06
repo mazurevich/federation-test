@@ -1,8 +1,26 @@
 <script>
-	import { Router, Route } from 'svelte-routing';
-	import Home from './components/pages/Home.svelte';
+  export let basePath = ''
+
+  import {Router, Route} from 'svelte-routing'
+  import {setContext} from 'svelte'
+  import Home from './pages/Home.svelte'
+  import Blog from './pages/Blog.svelte'
+
+  setContext('basePath', basePath)
 </script>
 
 <Router>
-	<Route path="/" component="{Home}" />
+  <Route path={`${basePath}/`}>
+    <Home/>
+  </Route>
+  <Route path={`${basePath}/blog`}>
+    <Blog/>
+  </Route>
 </Router>
+
+<!--<Router>-->
+<!--	<Route path={`/`} >-->
+<!--		<Home basePath />-->
+<!--	</Route>-->
+<!--	<Route path={`/blog`} component="{Blog}" />-->
+<!--</Router>-->
